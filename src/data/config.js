@@ -1,0 +1,6 @@
+export const RESUME_URL = 'https://drive.google.com/uc?export=download&id=1XPQ_YLToFbvxDPVJ_iXo6KeMOfaw0I4p'
+export const GITHUB_URL = 'https://github.com/Adityashaw2865'
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/aditya-kumar-shaw-481735326'
+export const LEETCODE_URL = 'https://leetcode.com/u/Aditya_shaw2006/'
+export const EMAIL = 'aks09adi@gmail.com'
+export const LEETCODE_USER = 'Aditya_shaw2006'

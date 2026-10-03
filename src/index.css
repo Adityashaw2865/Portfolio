@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ============ DARK THEME — Midnight Navy ============ */
+  --bg: #0F172A;        --bg-rgb: 15,23,42;
+  --bg-alt: #0D1526;
+  --bg2: #131C33;       --bg2-rgb: 19,28,51;        /* opaque panels (modal, nav) */
+  --surface: rgba(255,255,255,0.045);
+  --elevated: rgba(255,255,255,0.07);
+  --border: rgba(212,175,55,0.20);
+  --ov-rgb: 255,255,255;
+
+  --c1: #FFFDF7;
+  --c2: rgba(255,253,247,0.88);
+  --c3: rgba(255,255,255,0.78);   --c3-rgb: 255,255,255;
+  --c4: rgba(255,255,255,0.65);   --c4-rgb: 212,175,55;   /* c4-rgb = gold tint for hairlines/fills */
+  --c5: rgba(255,255,255,0.55);
+  --c6: rgba(255,255,255,0.50);
+  --c7: rgba(255,255,255,0.48);
+  --c8: rgba(255,255,255,0.30);
+  --c9: rgba(255,255,255,0.38);
+  --c10: rgba(255,255,255,0.65);
+
+  /* Brand */
+  --gold: #D4AF37;        --gold-rgb: 212,175,55;
+  --gold-light: #F0D060;
+  --gold-text: #F0D060;                     /* gold used as small text */
+  --saffron: #FF9933;     --saffron-rgb: 255,153,51;
+  --saffron-text: #FF9933;
+  --maroon: #7A1E1E;      --maroon-rgb: 122,30,30;
+  --maroon-dark: #4A0F0F;
+  --on-maroon: #FFF8E7;
+  --river: #0F4C81;       --river-rgb: 15,76,129;
+  --on-gold: #0F172A;
+  --link: #F0D060;
+
+  --tag-bg: rgba(15,76,129,0.28);
+  --tag-border: rgba(80,140,200,0.40);
+  --tag-text: rgba(255,255,255,0.78);
+
+  /* Legacy slots → brand */
+  --c1-rgb: 212,175,55;
+  --a1: #D4AF37; --a1-rgb: 212,175,55;
+  --a2: #F0D060; --a2-rgb: 240,208,96;
+  --a3: #FF9933; --a3-rgb: 255,153,51;
+  --a4: #D4AF37; --a4-rgb: 212,175,55;
+  --a5: #FF9933; --a5-rgb: 255,153,51;
+  --a6: #D4AF37; --a6-rgb: 212,175,55;
+
+  --grad: linear-gradient(90deg, #D4AF37, #F0D060, #D4AF37);
+  --btn-grad: linear-gradient(135deg, #D4AF37 0%, #F0D060 50%, #D4AF37 100%);
+  --hero-bg:
+    radial-gradient(ellipse 70% 60% at 15% 5%, #0D1E3A 0%, transparent 70%),
+    radial-gradient(ellipse 60% 55% at 90% 95%, #190A0A 0%, transparent 70%),
+    linear-gradient(180deg, #08111F 0%, #0F172A 100%);
+
+  --blob1-rgb: 212,175,55;  --blob2-rgb: 122,30,30;  --blob3-rgb: 15,76,129;
+  --blob-o: 0.12;
+
+  --chart-line: #D4AF37;  --chart-line-rgb: 212,175,55;
+  --chart-up: #3FA66B;    --chart-up-rgb: 63,166,107;
+  --chart-down: #C94A4A;  --chart-down-rgb: 201,74,74;
+  --chart-grid-rgb: 255,255,255;
+}
+
+[data-theme="light"] {
+  /* ============ LIGHT THEME — Temple White / Ivory ============ */
+  --bg: #FFFDF7;        --bg-rgb: 255,253,247;
+  --bg-alt: #FFF8E7;
+  --bg2: #FFFFFF;       --bg2-rgb: 255,255,255;
+  --surface: #FFFFFF;
+  --elevated: rgba(212,175,55,0.10);
+  --border: rgba(212,175,55,0.32);
+  --ov-rgb: 0,0,0;
+
+  --c1: #1E293B;
+  --c2: #273449;
+  --c3: #334155;   --c3-rgb: 51,65,85;
+  --c4: #64748B;   --c4-rgb: 212,175,55;
+  --c5: #64748B;
+  --c6: #64748B;
+  --c7: #64748B;
+  --c8: #CBBF9F;
+  --c9: #B9AD8C;
+  --c10: #475569;
+
+  --gold: #D4AF37;        --gold-rgb: 212,175,55;
+  --gold-light: #F0D060;
+  --gold-text: #8F6B00;
+  --saffron: #FF9933;     --saffron-rgb: 255,153,51;
+  --saffron-text: #B85C00;
+  --maroon: #7A1E1E;      --maroon-rgb: 122,30,30;
+  --maroon-dark: #4A0F0F;
+  --on-maroon: #FFF8E7;
+  --river: #0F4C81;       --river-rgb: 15,76,129;
+  --on-gold: #0F172A;
+  --link: #8F6B00;
+
+  --tag-bg: rgba(15,76,129,0.07);
+  --tag-border: rgba(15,76,129,0.28);
+  --tag-text: #0F4C81;
+
+  --c1-rgb: 212,175,55;
+  --a1: #D4AF37; --a1-rgb: 212,175,55;
+  --a2: #B8921F; --a2-rgb: 184,146,31;
+  --a3: #FF9933; --a3-rgb: 255,153,51;
+  --a4: #D4AF37; --a4-rgb: 212,175,55;
+  --a5: #FF9933; --a5-rgb: 255,153,51;
+  --a6: #D4AF37; --a6-rgb: 212,175,55;
+
+  --grad: linear-gradient(90deg, #8F6B00, #B8921F, #8F6B00);
+  --btn-grad: linear-gradient(135deg, #D4AF37 0%, #F0D060 50%, #D4AF37 100%);
+  --hero-bg:
+    radial-gradient(ellipse 70% 60% at 12% 5%, #FFF8E7 0%, transparent 70%),
+    radial-gradient(ellipse 60% 55% at 92% 95%, rgba(212,175,55,0.14) 0%, transparent 70%),
+    linear-gradient(180deg, #FFFDF7 0%, #FFF8E7 100%);
+
+  --blob1-rgb: 212,175,55;  --blob2-rgb: 255,153,51;  --blob3-rgb: 212,175,55;
+  --blob-o: 0.14;
+
+  --chart-line: #B8921F;  --chart-line-rgb: 184,146,31;
+  --chart-up: #287A50;    --chart-up-rgb: 40,122,80;
+  --chart-down: #B83A3A;  --chart-down-rgb: 184,58,58;
+  --chart-grid-rgb: 100,116,139;
+}
+
+/* Smooth theme switching (same brand, two moods) */
+*, *::before, *::after {
+  transition: background-color .5s ease, border-color .5s ease, color .5s ease, fill .5s ease, stroke .5s ease, box-shadow .5s ease;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { background-color: var(--bg); color: var(--c2); font-family: 'DM Sans', sans-serif; }
+  .font-display { font-family: 'Syne', sans-serif; }
+  .font-mono { font-family: 'DM Mono', monospace; }
+  a { text-underline-offset: 3px; }
+}
+
+@layer utilities {
+  .transition-all { transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+}
+
+/* Gold shimmer on the name — the one hero gradient */
+.grad-text {
+  background: var(--grad); background-size: 200% auto;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: gradShift 8s linear infinite;
+}
+.h2-grad { color: var(--c1); }
+@keyframes gradShift { to { background-position: 200% center; } }
+
+.float { animation: float 5s ease-in-out infinite; }
+@keyframes float { 50% { transform: translateY(-6px); } }
+
+.marquee-track { display: flex; width: max-content; animation: marquee 38s linear infinite; }
+.marquee-track.rev { animation-direction: reverse; animation-duration: 44s; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* Gold CTA: gradient, soft shine */
+[style*="btn-grad"] { position: relative; overflow: hidden; }
+[style*="btn-grad"]:hover { filter: brightness(1.07); }
+[style*="btn-grad"]::after {
+  content: ''; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,.35), transparent);
+  transform: skewX(-20deg); transition: left .7s ease;
+}
+[style*="btn-grad"]:hover::after { left: 140%; }
+
+/* Maroon secondary button */
+button[style*="var(--maroon)"]:hover { background: var(--maroon-dark) !important; }
+
+a[href^="http"]:not([style*="btn-grad"]):hover { color: var(--gold-text); }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(var(--gold-rgb),0.35); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+::selection { background: rgba(var(--gold-rgb),0.30); color: var(--c1); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+@keyframes cellIn { from { opacity: 0; transform: scale(0.5); } to { opacity: 1; transform: scale(1); } }
+
+/* Theme switch: circular reveal (View Transitions API; falls back to the colour fade) */
+html.vt *, html.vt *::before, html.vt *::after { transition: none !important; }
+::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 2; clip-path: circle(0 at var(--vt-x, 50%) var(--vt-y, 50%)); animation: vtReveal .8s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes vtReveal { to { clip-path: circle(150vmax at var(--vt-x, 50%) var(--vt-y, 50%)); } }
