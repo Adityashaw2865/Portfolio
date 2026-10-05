@@ -4,3 +4,4 @@ export const LINKEDIN_URL = 'https://www.linkedin.com/in/aditya-kumar-shaw-48173
 export const LEETCODE_URL = 'https://leetcode.com/u/Aditya_shaw2006/'
 export const EMAIL = 'aks09adi@gmail.com'
 export const LEETCODE_USER = 'Aditya_shaw2006'
+export const GITHUB_USER = 'Adityashaw2865'

@@ -3,24 +3,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import StockGraph from './StockGraph'
 import LeetCodeGraph from './LeetCodeGraph'
-import useTheme from '../hooks/useTheme'
-
-function StatImage({ src, alt, fallbackLabel, fallbackHref }) {
-  const [failed, setFailed] = useState(false)
-  if (failed) {
-    return (
-      <a href={fallbackHref} target="_blank" rel="noreferrer"
-        className="flex flex-col items-center justify-center gap-2 py-12 px-4 text-center transition-colors duration-200"
-        style={{ color: 'var(--c7)' }}
-        onMouseEnter={e => e.currentTarget.style.color = 'var(--c1)'}
-        onMouseLeave={e => e.currentTarget.style.color = 'var(--c7)'}>
-        <span className="font-mono text-xs">{fallbackLabel}</span>
-        <span className="font-mono text-xs" style={{ color: 'var(--c4)' }}>View on GitHub ↗</span>
-      </a>
-    )
-  }
-  return <img src={src} alt={alt} className="w-full" loading="lazy" onError={() => setFailed(true)} key={src} />
-}
+import GitHubActivity from './GitHubActivity'
 
 const fadeUp = { hidden: { opacity: 0, y: 30, filter: 'blur(8px)' }, visible: { opacity: 1, y: 0, filter: 'blur(0px)', transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } } }
 const stagger = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }
@@ -45,12 +28,6 @@ const platforms = [
 export default function DSA() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  const theme = useTheme()
-
-  const isDark = theme === 'dark'
-  const ghColor = isDark ? 'D4AF37' : 'B8921F'
-  const ghTitle = isDark ? 'FFFDF7' : '1E293B'
-  const ghText = isDark ? 'A9AEB6' : '64748B'
 
   return (
     <section id="dsa" style={{ background: 'var(--bg-alt)' }} className="py-28 px-6 relative overflow-hidden">
@@ -124,35 +101,9 @@ export default function DSA() {
             <LeetCodeGraph />
           </motion.div>
 
-          {/* GitHub Stats */}
+          {/* GitHub stats, languages and contribution heatmap (native, live) */}
           <motion.div variants={fadeUp} className="mt-8">
-            <p className="font-mono text-xs tracking-widest uppercase mb-5" style={{ color: 'var(--c6)' }}>GitHub Activity</p>
-            <div className="grid md:grid-cols-2 gap-4 mb-4">
-              <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
-                <StatImage
-                  src={`https://github-readme-stats.vercel.app/api?username=Adityashaw2865&show_icons=true&hide_border=true&bg_color=00000000&title_color=${ghTitle}&icon_color=${ghColor}&text_color=${ghText}&ring_color=${ghColor}`}
-                  alt="Aditya's GitHub stats"
-                  fallbackLabel="GitHub Stats"
-                  fallbackHref={GITHUB_URL}
-                />
-              </div>
-              <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
-                <StatImage
-                  src={`https://github-readme-stats.vercel.app/api/top-langs/?username=Adityashaw2865&layout=compact&hide_border=true&bg_color=00000000&title_color=${ghTitle}&text_color=${ghText}`}
-                  alt="Aditya's top languages"
-                  fallbackLabel="Top Languages"
-                  fallbackHref={GITHUB_URL}
-                />
-              </div>
-            </div>
-            <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(var(--c4-rgb),0.08)' }}>
-              <StatImage
-                src={`https://github-readme-activity-graph.vercel.app/graph?username=Adityashaw2865&bg_color=00000000&color=${ghColor}&line=${ghColor}&point=${ghColor}&hide_border=true&area=true&area_color=${ghColor}`}
-                alt="Aditya's GitHub contribution graph"
-                fallbackLabel="Contribution Graph"
-                fallbackHref={GITHUB_URL}
-              />
-            </div>
+            <GitHubActivity />
           </motion.div>
         </motion.div>
       </div>

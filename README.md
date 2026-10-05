@@ -28,7 +28,8 @@ To mark a project as featured, set `featured: true` in `src/data/projects.js`.
 ## Live activity graphs
 
 - **LeetCode heatmap** (`LeetCodeGraph.jsx`) reads the public submission calendar for `LEETCODE_USER` in `src/data/config.js`.
-- **GitHub contributions graph** (`StockGraph.jsx`) reads the public contributions API.
+- **GitHub section** (`GitHubActivity.jsx`) shows your stats, top languages and a contribution heatmap, built from GitHub's public API (no token). Anonymous API calls are rate-limited (about 60/hour per visitor IP), so results are cached for 10 minutes per tab.
+- **Contribution trend chart** (`StockGraph.jsx`) reads the public contributions API.
 
 Both load live data in the browser. They rely on free third-party APIs, so they can occasionally be slow or unavailable; a fallback message is shown in that case.
 
